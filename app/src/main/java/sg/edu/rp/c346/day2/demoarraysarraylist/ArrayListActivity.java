@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class ArrayListActivity extends AppCompatActivity {
 
     TextView tv;
@@ -17,6 +19,25 @@ public class ArrayListActivity extends AppCompatActivity {
         tv = findViewById(R.id.textView2);
 
         //continue view the code in the worksheet
+        ArrayList<String> fruits;
+        fruits = new ArrayList<String>();
+        fruits.add("apple");
+        fruits.add("banana");
+        fruits.add("cherry");
+        fruits.add(3,"durian");
+
+        String theFruit = fruits.get(1);
+        fruits.remove(0);
+        fruits.set(fruits.size()-1, "dragon fruit");
+
+
+        String display = "Fruits\n";
+        display += "=====\n";
+        for(int i = 0; i < fruits.size(); i++){
+            display += fruits.get(i) + "\n";
+        }
+
+        tv.setText(display);
 
 
     }
